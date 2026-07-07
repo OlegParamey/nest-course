@@ -33,7 +33,7 @@ export class User extends Model<User, UserCreationAttrs> {
 
 	@ApiProperty({ example: 'Banned for being rude', description: 'Ban reason' })
 	@Column({ type: DataType.STRING, allowNull: true })
-	banReasoon: string;
+	banReasoon: string | null;
 
 	@BelongsToMany(() => Role, () => UserRoles)
 	roles: Role[];
